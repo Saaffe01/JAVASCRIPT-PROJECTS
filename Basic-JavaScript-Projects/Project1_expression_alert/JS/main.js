@@ -1,15 +1,10 @@
-// Sentence 1
-var sent1 = 'This is the begninning of the string'
+let fullName = ' Saaffe ';
 
-// Sentence 2
-var sent2 = 'and this is the end of the string.'
+function myFunction() {
+    let fullName = 'Saaffe';
+    let lastName = 'Algarib';
 
-// Output: This is the begninning of the string and this is the end of the string.
-var fullSentence = sent1 + ' ' + sent2;
-console.log(fullSentence);
+    fullName += ' ' + lastName;
+    document.getElementById('concatenate').innerHTML = fullName;
+}
 
-// Window alert
-alert(fullSentence);
-
-// Document write
-document.write(fullSentence);
