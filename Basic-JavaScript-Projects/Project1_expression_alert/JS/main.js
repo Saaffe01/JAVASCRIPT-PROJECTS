@@ -7,4 +7,3 @@ function myFunction() {
     fullName += ' ' + lastName;
     document.getElementById('concatenate').innerHTML = fullName;
 }
-
