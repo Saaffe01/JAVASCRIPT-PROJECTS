@@ -5,5 +5,5 @@ function myFunction() {
     sentence += "JavaScript!";
     
     document.getElementById("concatenate").innerHTML = sentence; // This displays the final sentence that gets created 
-    
-}
+};
+
