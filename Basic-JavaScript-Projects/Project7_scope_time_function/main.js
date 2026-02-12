@@ -10,14 +10,18 @@ example();
 
 // write a function that uses an if else statement 
 // feel free to change the hour of your liking to see the different outputs
-let hour = 10;
 
-if (hour >= 6 && hour < 12) 
-    console.log('Good morning!');
-else if (hour >= 12 && hour < 18)
-    console.log('Good Afternoon');
-else 
-    console.log('Good Evening');
+
+function hourGreeting(){
+    if (hour >= 6 && hour < 12) 
+        console.log('Good morning!');
+    else if (hour >= 12 && hour < 18)
+        console.log('Good Afternoon');
+    else 
+        console.log('Good Evening');
+}
+
+hourGreeting(10);
 
 // write a function that throws an error
 
@@ -35,14 +39,25 @@ function add(a, b) {
 function Time_function() {
     var Time = new Date().getHours();
     var Reply;
-    if (Time < 12 == Time > 0) {
+    if (Time < 12 && Time > 0) {
         Reply = "It is morning time!";
     }
-    else if (Time >= 12 == Time < 18) {
+    else if (Time >= 12 && Time < 18) {
         Reply = "It is afternoon.";
     }
     else {
         Reply = "It is evening time.";
     }
     document.getElementById("Time_of_day").innerHTML = Reply;
+}
+
+// 
+
+function full_Sentence() {
+    let part1 = "I have ";
+    let part2 = "made this ";
+    let part3 = "into a complete ";
+    let part4 = "sentence.";
+    let whole_sentence = part1.concat(part2, part3, part4);
+    document.getElementById("Concatenate").innerHTML = whole_sentence;
 }
