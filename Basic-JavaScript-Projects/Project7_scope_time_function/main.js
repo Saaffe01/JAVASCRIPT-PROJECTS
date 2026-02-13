@@ -12,7 +12,7 @@ example();
 // feel free to change the hour of your liking to see the different outputs
 
 
-function hourGreeting(){
+function hourGreeting(hour) {
     if (hour >= 6 && hour < 12) 
         console.log('Good morning!');
     else if (hour >= 12 && hour < 18)

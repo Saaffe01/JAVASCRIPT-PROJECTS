@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css" type="text/css">
+    <title>Countdown Slideshow</title>
+</head>
+<body>
+    <div class="slideshow-container">
+        <img id="slide-display" src="images/corvette.jpg" style="width:400px; height:300px; border-radius: 8px;">
+        
+        <div class="controls">
+            <button onclick="changeSlide(-1)">❮ Back</button>
+            <button onclick="changeSlide(1)">Next ❯</button>
+        </div>
+        
+        <p>Slide <span id="currentNum">1</span> of 3</p>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
