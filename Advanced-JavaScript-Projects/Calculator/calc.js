@@ -1,4 +1,5 @@
 
+// object to hold the values
 const Calculator = {
     Display_Value: '0',
     First_Operand: null,
@@ -6,6 +7,7 @@ const Calculator = {
     operator: null,
 };
 
+// this function handles the input of digits and updates the display value
 function Input_Digit(digit) {
     const { Display_Value, Wait_Second_Operand } = Calculator;
     if (Wait_Second_Operand === true) {
@@ -16,13 +18,14 @@ function Input_Digit(digit) {
     }
 }
 
+
 function Input_Decimal(dot) {
     if (Calculator.Wait_Second_Operand === true) return;
     if (!Calculator.Display_Value.includes(dot)) {
         Calculator.Display_Value += dot;
     }
 }
-
+// this function handles the operators and performs the calculations
 function Handle_Operator(Next_Operator) {
     const {First_Operand, Display_Value, operator} = Calculator;
     const Value_of_Input = parseFloat(Display_Value);
@@ -62,11 +65,12 @@ function Calculator_Reset() {
     Calculator.operator = null;
 }
 
+// this function updates the display of the calculator to show the current value
 function Update_Display() {
     const display = document.querySelector('.calculator-keys');
     display.value = Calculator.Display_Value;
 }
-
+Update_Display();
 const keys = document.querySelector('.calculator-keys');
 keys.addEventListener('click', (event) => {
     const { target } = event;
