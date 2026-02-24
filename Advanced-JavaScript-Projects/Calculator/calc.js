@@ -30,7 +30,7 @@ function Handle_Operator(Next_Operator) {
     const {First_Operand, Display_Value, operator} = Calculator;
     const Value_of_Input = parseFloat(Display_Value);
 
-    if (operator && Calculator) {
+    if (operator && Calculator.Wait_Second_Operand) {
         Calculator.operator = Next_Operator;
         return;
     }
@@ -67,7 +67,7 @@ function Calculator_Reset() {
 
 // this function updates the display of the calculator to show the current value
 function Update_Display() {
-    const display = document.querySelector('.calculator-keys');
+    const display = document.querySelector('.calculator-screen');
     display.value = Calculator.Display_Value;
 }
 Update_Display();
