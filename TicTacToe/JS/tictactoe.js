@@ -159,7 +159,14 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
       }
     }
   }
+  // this function clears the canvas after a win
+function clear() {
+  const animationLoop = requestAnimationFrame(clear);
+  c.clearRect(0, 0, 608, 608);
+  cancelAnimationFrame(animationLoop);
+}
 
+  // these functions are called to reset the game after a win or a tie. The first function is called to disable clicking while the win sound is playing and the second function clears the canvas and resets the game after a 1 second delay.
   animateLineDrawing();
   disableClick();
   audio("./media/winGame.mp3");
@@ -168,22 +175,6 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
     clear(), resetGame();
   }, 1000);
 }
-
-// this function clears the canvas after a win
-function clear() {
-  const animationLoop = requestAnimationFrame(clear);
-  c.clearRect(0, 0, 608, 608);
-  cancelAnimationFrame(animationLoop);
-}
-
-// these functions are called to reset the game after a win or a tie. The first function is called to disable clicking while the win sound is playing and the second function clears the canvas and resets the game after a 1 second delay.
-
-disableClick();
-audio("./media/winGame.mp3");
-animateLineDrawing();
-setTimeout(function () {
-  clear(), resetGame();
-}, 1000);
 
 // function to reset game
 function resetGame() {
