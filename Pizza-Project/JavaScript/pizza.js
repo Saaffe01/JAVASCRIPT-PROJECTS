@@ -1,4 +1,6 @@
 
+// this function is triggered when the user clicks the "Order" button. It calculates the total price of the pizza based on the selected size and toppings, and updates the HTML to show the order summary and total price.
+
 function getReceipt() {
   let text1 = "<h3>You Ordered:</h3>";
   let runningTotal = 0;
@@ -27,6 +29,8 @@ function getReceipt() {
   getTopping(runningTotal, text1);
 }
 
+
+// this function executes after the size total has been calculated. It checks which toppings have been selected, calculates the total price for the toppings (with the first topping being free), and updates the HTML to show the order summary and total price.
 function getTopping(runningTotal, text1) {
   let toppingTotal = 0;
   let selectedTopping = [];
@@ -45,7 +49,7 @@ function getTopping(runningTotal, text1) {
   } else {
     toppingTotal = 0;
   }
-
+ // Here we call the getTopping function and pass in the runningTotal and text1 variables to calculate the total price of the toppings and update the order summary text. We then update the HTML to show the order summary and total price to the user.
   runningTotal = runningTotal + toppingTotal;
   console.log("total selected topping items: " + toppingCount);
   console.log(
@@ -57,3 +61,4 @@ function getTopping(runningTotal, text1) {
   document.getElementById("totalPrice").innerHTML =
     "<h3>Total: <strong>$" + runningTotal + ".00" + "</strong></h3>";
 }
+
