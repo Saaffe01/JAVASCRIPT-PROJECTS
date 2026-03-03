@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="main-content">
+            <h1>Welcome to my Travel Site</h1>
+            <button id="load-btn" onclick="loadContent()">Check Deals</button>
+            
+            <div id="content-area"></div>
+        </div>
+
+        <script>
+            function loadContent() {
+                // 1. Create the request object
+                var ajax = new XMLHttpRequest();
+
+                // 2. Define what to do when the content arrives
+                ajax.onreadystatechange = function() {
+                    if (ajax.readyState == 4 && ajax.status == 200) {
+                        document.getElementById('content-area').innerHTML = ajax.responseText;
+                    }
+                };
+
+                // 3. Open the "tunnel" to content.html and send the request
+                ajax.open('GET', 'content.html', true);
+                ajax.send();
+            }
+        </script>
+    </body>
+</html>
