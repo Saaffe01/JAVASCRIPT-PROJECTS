@@ -9,10 +9,10 @@ function getMsg () {
 
     // function to display user input value once request has been received
     ajaxRequest.onload = function () {
-        document.getElementById("tkuMsg").innerHTML = "Thank you " + inputVal + " for signing up!"
+        document.getElementById("content-area").innerHTML = "Thank you " + inputVal + " for signing up!"
     }
     // Step 2: Prepare the request
-    ajaxRequest.open('GET', 'response.html', true);
+    ajaxRequest.open('GET', 'content.html', true);
 
     // Step 3: Defines the AJAX response callback method that establoshes the connection and sends the request to the server
     ajaxRequest.onreadystatechange = function () {
